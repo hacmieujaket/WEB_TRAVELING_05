@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelly - Khám phá thế giới theo cách của bạn</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <link href="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">Travelly</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tour.html">Tours</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Khám phá thế giới theo cách của bạn</h1>
+            <form class="search-bar">
+                <input type="text" placeholder="Điểm đến">
+                <input type="date">
+                <input type="number" placeholder="Ngân sách ($)">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <main>
+        <section id="destinations" class="destinations">
+            <h2>Điểm đến nổi bật</h2>
+            <div class="grid">
+                <!-- Card -->
+                <div class="card">
+                    <img src="Source/NUIBADEN.jpg" alt="BADEN">
+                    <div class="card-content">
+                        <h3>Núi Bà Đen</h3>
+                        <p>Giá tour: $1200</p>
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <button>Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Source/VUNGTAU.jpg" alt="Biển">
+                    <div class="card-content">
+                        <h3>Vũng Tàu</h3>
+                        <p>Giá tour: $900</p>
+                        <p>⭐⭐⭐⭐</p>
+                        <button>Xem chi tiết</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Source/DALAT.jpg" alt="Thành phố">
+                    <div class="card-content">
+                        <h3>Đà Lạt</h3>
+                        <p>Giá tour: $1500</p>
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <button>Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <p>📍 Travelly - Khám phá thế giới</p>
+            <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+            <div class="social">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+            <form class="newsletter">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button>Đăng ký</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
