@@ -49,16 +49,13 @@ header.scrolled {
     cursor: pointer;
 }
 
-/* Hero */
-
-/* Đây mới là chỗ để thay ảnh nền */
 #hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../Source/DALAT.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* Hiệu ứng ảnh đứng yên khi cuộn trang rất xịn */
+
     height: 100vh;
     display: flex;
     justify-content: center;
