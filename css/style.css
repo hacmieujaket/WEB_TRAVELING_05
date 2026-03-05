@@ -48,7 +48,7 @@ header.scrolled {
     font-size: 1.8rem;
     cursor: pointer;
 }
-
+/*phần đầu giới thiệu*/
 #hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../Source/DALAT.jpg');
