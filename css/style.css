@@ -13,9 +13,12 @@ header {
     width: 100%;
     background: transparent;
     display: flex;
-    justify-content: space-between;
+
+    justify-content: flex-start;
     align-items: center;
     padding: 15px 50px;
+    gap: 40px;
+    /* Khoảng cách giữa Logo và Menu */
     transition: 0.3s;
     z-index: 1000;
 }
@@ -48,7 +51,8 @@ header.scrolled {
     font-size: 1.8rem;
     cursor: pointer;
 }
-/*phần đầu giới thiệu*/
+
+/* Vùng đầu giới thiệu đầu trang*/
 #hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../Source/DALAT.jpg');
@@ -93,56 +97,134 @@ header.scrolled {
     cursor: pointer;
 }
 
-/* Destinations */
-.destinations {
-    padding: 80px 50px;
+/* Trending */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-.destinations h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #0077b6;
+.section-header {
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.grid {
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.grid-trending {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    /* Chia làm 6 cột để chia tỉ lệ */
+    gap: 15px;
 }
 
 .card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
     position: relative;
-}
-
-.card img {
-    width: 100%;
-    transition: transform 0.3s;
-}
-
-.card:hover img {
-    transform: scale(1.05);
-}
-
-.card-content {
-    padding: 15px;
-}
-
-.card button {
-    display: none;
-    background: #0077b6;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.card:hover button {
-    display: inline-block;
+.card.tall {
+    grid-column: span 3;
+    height: 300px;
+}
+
+.card:not(.tall) {
+    grid-column: span 2;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 40%);
+    padding: 20px;
+}
+
+.card-overlay h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/*định dạng các thẻ*/
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #f0f0f0;
+    /* Nền xám nhẹ khi ảnh chưa load */
+}
+
+/* 2 ảnh lớn ở hàng đầu */
+.card.tall {
+    grid-column: span 3;
+    height: 300px;
+}
+
+/* 3 ảnh nhỏ ở hàng sau */
+.card:not(.tall) {
+    grid-column: span 2;
+    height: 250px;
+}
+
+/* Xử lý ảnh căn giữa và đầy đủ */
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Lớp phủ chữ trắng lên ảnh */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+    padding: 20px;
+    z-index: 2;
+}
+
+.card-overlay h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Hiệu ứng khi di chuột vào: Chỉ phóng to ảnh bên trong, không nhảy cả khung */
+.card:hover .card-img {
+    transform: scale(1.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* Footer */
