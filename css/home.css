@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f6f7;
     color: #333;
 }
 
@@ -42,7 +42,7 @@ header.scrolled {
 
 .nav a {
     text-decoration: none;
-    color: #333;
+    color: #f4f6f7;
     font-weight: 500;
 }
 
@@ -55,8 +55,8 @@ header.scrolled {
 
 /* Vùng đầu giới thiệu đầu trang*/
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../Source/DALAT.jpg');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../Source/FARMING.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -221,7 +221,7 @@ header.scrolled {
 
 /* Hiệu ứng khi di chuột vào: Chỉ phóng to ảnh bên trong, không nhảy cả khung */
 .card:hover .card-img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .card:hover {
