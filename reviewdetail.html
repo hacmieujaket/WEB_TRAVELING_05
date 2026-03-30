@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
-    <link rel="stylesheet" href="css/review.css"> 
-    <title>Document</title>
-</head>
-<body class="review-detail">
-    <header>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+
+    <title>Travelly - Khám phá thế giới theo cách của bạn</title>
+</head>
+
+<body class="review-detail">
+
+    <header id="header">
+        <a href="index.html" class="logo">Travelly</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="destinations.html">Desnitation</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="review.html">Review</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
-    <main> 
+
+    <main>
         <div class="container reviewdetailhtml">
             <div class="container-header">
                 <h1>Chi tiết đánh giá</h1>
             </div>
-            <form class="review-form container"> 
+            <form class="review-form container">
                 <div class="review-form component-container">
-                    <label for="reviewer-name" class="name-label" >Họ và tên</label>
+                    <label for="reviewer-name" class="name-label">Họ và tên</label>
                     <input type="text" id="reviewer-name" name="reviewerName" class="name-input">
                 </div>
                 <div class="review-form component-container">
                     <label for="review-place" class="name-label">Địa điểm du lịch</label>
                     <select id="review-place" name="reviewPlace" class="place-select">
-                        <option value=""disabled selected>Chọn địa điểm</option>
+                        <option value="" disabled selected>Chọn địa điểm</option>
                         <option value="hanoi">Hà Nội</option>
                         <option value="tphcm">TP HCM</option>
                         <option value="danang">Đà Nẵng</option>
@@ -73,7 +88,7 @@
                         <input type="radio" name="serviceStar" id="servicestar2" value="2">
                         <label for="servicestar2">&#9733</label>
                         <input type="radio" name="serviceStar" id="servicestar1" value="1">
-                        <label for="servicestar1">&#9733</label>    
+                        <label for="servicestar1">&#9733</label>
                     </span>
                 </div>
                 <div class="review-form component-container">
@@ -88,7 +103,7 @@
                         <input type="radio" name="hotelStar" id="hotelstar2" value="2">
                         <label for="hotelstar2">&#9733</label>
                         <input type="radio" name="hotelStar" id="hotelstar1" value="1">
-                        <label for="hotelstar1">&#9733</label>           
+                        <label for="hotelstar1">&#9733</label>
                     </span>
                 </div>
                 <div class="review-form component-container">
@@ -103,7 +118,7 @@
                         <input type="radio" name="tourguideStar" id="tourguidestar2" value="2">
                         <label for="tourguidestar2">&#9733</label>
                         <input type="radio" name="tourguideStar" id="tourguidestar1" value="1">
-                        <label for="tourguidestar1">&#9733</label>  
+                        <label for="tourguidestar1">&#9733</label>
                     </span>
                 </div>
                 <div class="review-form component-container">
@@ -118,26 +133,40 @@
                         <input type="radio" name="itineraryStar" id="itinerarystar2" value="2">
                         <label for="itinerarystar2">&#9733</label>
                         <input type="radio" name="itineraryStar" id="itinerarystar1" value="1">
-                        <label for="itinerarystar1">&#9733</label>     
+                        <label for="itinerarystar1">&#9733</label>
                     </span>
                 </div>
                 <div class="review-form box-component">
                     <label for="detail" class="name-label">Đánh giá chi tiết</label>
-                    <textarea class="text-box", id="detail" name="detailBox" rows="6" placeholder="Hãy nhập chi tiết dánh giá của bạn"></textarea>
+                    <textarea class="text-box" , id="detail" name="detailBox" rows="6"
+                        placeholder="Hãy nhập chi tiết dánh giá của bạn"></textarea>
                 </div>
-                <div  class="date-review-container">
+                <div class="date-review-container">
                     <label class="name-label">Ngày đánh giá : </label>
                     <span id="review-date" class="readonly-field"></span>
                 </div>
                 <div class="review-form submit-component">
-                    <button class="submit-button", type="submit">Gửi</button>
+                    <button class="submit-button" , type="submit">Gửi</button>
                 </div>
             </form>
         </div>
     </main>
-    <footer>
 
+    <footer id="contact">
+        <div class="footer-content">
+            <p>📍 Travelly - Khám phá thế giới</p>
+            <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+            <div class="social">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+            <form class="newsletter">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button>Đăng ký</button>
+            </form>
+        </div>
     </footer>
+
     <script src="js/reviewdetail.js"></script>
 </body>
+
 </html>

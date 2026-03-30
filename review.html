@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +10,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/review.css">   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+
     <title>Đánh giá của khách hàng</title>
 </head>
-<body class="review">
-    <header>
 
+<body class="review">
+
+    <header id="header">
+        <a href="home.html" class="logo">Travelly</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="destinations.html">Desnitation</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="review.html">Review</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
-    <main> 
-        <div class="container reviewhtml" >
+
+    <main>
+        <div class="container reviewhtml">
             <div class="review-header">
                 <h1>Mỗi đánh giá của bạn có thể tạo nên một hành trình đáng nhớ</h1>
                 <p>
@@ -38,7 +53,7 @@
                     <img src="Source/dalatlqk.png" class="image-slide">
                     <img src="Source/nuibadenlqk.png" class="image-slide">
                     <img src="Source/vungtaulqk.png" class="image-slide ">
-                    
+
                 </div>
             </div>
             <section class="reviews-container" id="reviewContainer">
@@ -51,11 +66,24 @@
                 </div>
                 <div id="pagination" class="pagination-container"></div>
             </section>
-        </div>  
+        </div>
     </main>
-    <footer>
 
+    <footer id="contact">
+        <div class="footer-content">
+            <p>📍 Travelly - Khám phá thế giới</p>
+            <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+            <div class="social">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+            <form class="newsletter">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button>Đăng ký</button>
+            </form>
+        </div>
     </footer>
+
     <script src="js/review.js"></script>
 </body>
+
 </html>
