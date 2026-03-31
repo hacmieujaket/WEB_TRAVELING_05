@@ -87,3 +87,12 @@ footer .social a {
     color: #fff;
     cursor: pointer;
 }
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffb703;
+}
