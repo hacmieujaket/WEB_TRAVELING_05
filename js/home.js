@@ -1,4 +1,3 @@
-
 /*hiện thị submit*/
 const form = document.querySelector(".search-bar");
 
