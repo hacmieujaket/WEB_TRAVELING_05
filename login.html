@@ -3,13 +3,26 @@
 
 <head>
   <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/header_footer.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HASH TECHIE OFFICIAL</title>
 </head>
 
 <body>
-  <section>
+  <header id="header">
+    <a href="home.html" class="logo">Travelly</a>
+    <nav class="nav">
+      <ul>
+        <li><a href="destinations.html">Desnitation</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
     <div class="form-box">
       <div class="form-value">
         <form id="login-form">
@@ -40,12 +53,43 @@
         </form>
       </div>
     </div>
-  </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-content">
+
+      <div class="footer-links">
+        <a href="vision.html">Về chúng tôi</a>
+      </div>
+
+      <p>Travelly giúp bạn khám phá những điểm đến tuyệt vời trên khắp Việt Nam và thế giới.</p>
+
+      <div class="stats">
+        <p>🌍 50+ Điểm đến</p>
+        <p>🏨 20+ Đối tác khách sạn</p>
+        <p>✈️ 10+ Hãng du lịch</p>
+      </div>
+
+      <div class="partners">
+        <p>Đối tác: Agoda | Booking | Traveloka</p>
+      </div>
+
+      <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+
+      <div class="social">
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script src="js/login.js"></script>
+  <script src="js/header_footer.js"></script>
 </body>
 
 </html>

@@ -5,181 +5,228 @@
     <meta charset="UTF-8" />
     <title>Travelly - Khám phá thế giới theo cách của bạn</title>
     <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/header_footer.css">
 </head>
 
 <body>
-    <h1>Đặt vé</h1>
+    <header id="header">
+        <a href="home.html" class="logo">Travelly</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="destinations.html">Desnitation</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="review.html">Review</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="tab">
-        <button id="tab-mb" class="active">Đặt vé máy bay</button>
-        <button id="tab-ks">Đặt phòng khách sạn</button>
-    </div>
+    <main class="booking-container">
 
-    <div id="form-mb" class="form-section">
-        <div class="grid">
-            <div>
-                <label>Nơi đi:</label>
-                <select id="noiDi" required>
-                    <option value="">--Chọn--</option>
-                    <option>Hà Nội</option>
-                    <option>TP HCM</option>
-                    <option>Đà Nẵng</option>
-                    <option>Hải Phòng</option>
-                    <option>Cần Thơ</option>
-                    <option>Huế</option>
-                    <option>Quảng Ninh</option>
-                    <option>Tuyên Quang</option>
-                    <option>Lào Cai</option>
-                    <option>Thái Nguyên</option>
-                    <option>Phú Thọ</option>
-                    <option>Bắc Ninh</option>
-                    <option>Hưng Yên</option>
-                    <option>Ninh Bình</option>
-                    <option>Quảng Trị</option>
-                    <option>Quảng Ngãi</option>
-                    <option>Gia Lai</option>
-                    <option>Khánh Hòa</option>
-                    <option>Lâm Đồng</option>
-                    <option>Đắk Lắk</option>
-                    <option>Đồng Nai</option>
-                    <option>Tây Ninh</option>
-                    <option>Vĩnh Long</option>
-                    <option>Đồng Tháp</option>
-                    <option>Cà Mau</option>
-                    <option>An Giang</option>
-                    <option>Lai Châu</option>
-                    <option>Điện Biên</option>
-                    <option>Sơn La</option>
-                    <option>Lạng Sơn</option>
-                    <option>Thanh Hoá</option>
-                    <option>Nghệ An</option>
-                    <option>Hà Tĩnh</option>
-                    <option>Cao Bằng</option>
-                </select>
+        <section class="booking-content">
+            <h1>Đặt vé</h1>
+            <div class="tab">
+                <button id="tab-mb" class="active">Đặt vé máy bay</button>
+                <button id="tab-ks">Đặt phòng khách sạn</button>
             </div>
-            <div>
-                <label>Nơi đến:</label>
-                <select id="noiDen" required>
-                    <option value="">--Chọn--</option>
-                    <option>Hà Nội</option>
-                    <option>TP HCM</option>
-                    <option>Đà Nẵng</option>
-                    <option>Hải Phòng</option>
-                    <option>Cần Thơ</option>
-                    <option>Huế</option>
-                    <option>Quảng Ninh</option>
-                    <option>Tuyên Quang</option>
-                    <option>Lào Cai</option>
-                    <option>Thái Nguyên</option>
-                    <option>Phú Thọ</option>
-                    <option>Bắc Ninh</option>
-                    <option>Hưng Yên</option>
-                    <option>Ninh Bình</option>
-                    <option>Quảng Trị</option>
-                    <option>Quảng Ngãi</option>
-                    <option>Gia Lai</option>
-                    <option>Khánh Hòa</option>
-                    <option>Lâm Đồng</option>
-                    <option>Đắk Lắk</option>
-                    <option>Đồng Nai</option>
-                    <option>Tây Ninh</option>
-                    <option>Vĩnh Long</option>
-                    <option>Đồng Tháp</option>
-                    <option>Cà Mau</option>
-                    <option>An Giang</option>
-                    <option>Lai Châu</option>
-                    <option>Điện Biên</option>
-                    <option>Sơn La</option>
-                    <option>Lạng Sơn</option>
-                    <option>Thanh Hoá</option>
-                    <option>Nghệ An</option>
-                    <option>Hà Tĩnh</option>
-                    <option>Cao Bằng</option>
-                </select>
+
+            <div id="form-mb" class="form-section">
+                <div class="grid">
+                    <div>
+                        <label>Nơi đi:</label>
+                        <select id="noiDi" required>
+                            <option value="">--Chọn--</option>
+                            <option>Hà Nội</option>
+                            <option>TP HCM</option>
+                            <option>Đà Nẵng</option>
+                            <option>Hải Phòng</option>
+                            <option>Cần Thơ</option>
+                            <option>Huế</option>
+                            <option>Quảng Ninh</option>
+                            <option>Tuyên Quang</option>
+                            <option>Lào Cai</option>
+                            <option>Thái Nguyên</option>
+                            <option>Phú Thọ</option>
+                            <option>Bắc Ninh</option>
+                            <option>Hưng Yên</option>
+                            <option>Ninh Bình</option>
+                            <option>Quảng Trị</option>
+                            <option>Quảng Ngãi</option>
+                            <option>Gia Lai</option>
+                            <option>Khánh Hòa</option>
+                            <option>Lâm Đồng</option>
+                            <option>Đắk Lắk</option>
+                            <option>Đồng Nai</option>
+                            <option>Tây Ninh</option>
+                            <option>Vĩnh Long</option>
+                            <option>Đồng Tháp</option>
+                            <option>Cà Mau</option>
+                            <option>An Giang</option>
+                            <option>Lai Châu</option>
+                            <option>Điện Biên</option>
+                            <option>Sơn La</option>
+                            <option>Lạng Sơn</option>
+                            <option>Thanh Hoá</option>
+                            <option>Nghệ An</option>
+                            <option>Hà Tĩnh</option>
+                            <option>Cao Bằng</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nơi đến:</label>
+                        <select id="noiDen" required>
+                            <option value="">--Chọn--</option>
+                            <option>Hà Nội</option>
+                            <option>TP HCM</option>
+                            <option>Đà Nẵng</option>
+                            <option>Hải Phòng</option>
+                            <option>Cần Thơ</option>
+                            <option>Huế</option>
+                            <option>Quảng Ninh</option>
+                            <option>Tuyên Quang</option>
+                            <option>Lào Cai</option>
+                            <option>Thái Nguyên</option>
+                            <option>Phú Thọ</option>
+                            <option>Bắc Ninh</option>
+                            <option>Hưng Yên</option>
+                            <option>Ninh Bình</option>
+                            <option>Quảng Trị</option>
+                            <option>Quảng Ngãi</option>
+                            <option>Gia Lai</option>
+                            <option>Khánh Hòa</option>
+                            <option>Lâm Đồng</option>
+                            <option>Đắk Lắk</option>
+                            <option>Đồng Nai</option>
+                            <option>Tây Ninh</option>
+                            <option>Vĩnh Long</option>
+                            <option>Đồng Tháp</option>
+                            <option>Cà Mau</option>
+                            <option>An Giang</option>
+                            <option>Lai Châu</option>
+                            <option>Điện Biên</option>
+                            <option>Sơn La</option>
+                            <option>Lạng Sơn</option>
+                            <option>Thanh Hoá</option>
+                            <option>Nghệ An</option>
+                            <option>Hà Tĩnh</option>
+                            <option>Cao Bằng</option>
+                        </select>
+                    </div>
+                    <div><label>Ngày đi:</label><input id="ngayDiMB" type="date" required></div>
+                    <div><label>Số vé:</label><input id="soKhach" type="number" min="1" value="1" required></div>
+                    <div class="seat-class-group">
+                        <span>Hạng ghế:</span>
+                        <label><input name="hangGhe" type="radio" value="Phổ thông" checked> Phổ thông</label>
+                        <label><input name="hangGhe" type="radio" value="Phổ thông đặc biệt"> Phổ thông đặc biệt</label>
+                        <label><input name="hangGhe" type="radio" value="Thương gia"> Thương gia</label>
+                        <label><input name="hangGhe" type="radio" value="Hạng nhất"> Hạng nhất</label>
+                    </div>
+                </div>
+                <button id="timChuyen">Tìm chuyến bay</button>
+                <div id="dsChuyen"></div>
+                <button id="datVe">Đặt vé</button>
+                <p id="ketQuaVe" class="success"></p>
+                <p id="loiVe" class="error"></p>
             </div>
-            <div><label>Ngày đi:</label><input id="ngayDiMB" type="date" required></div>
-            <div><label>Số vé:</label><input id="soKhach" type="number" min="1" value="1" required></div>
-            <div class="seat-class-group">
-                <span>Hạng ghế:</span>
-                <label><input name="hangGhe" type="radio" value="Phổ thông" checked> Phổ thông</label>
-                <label><input name="hangGhe" type="radio" value="Phổ thông đặc biệt"> Phổ thông đặc biệt</label>
-                <label><input name="hangGhe" type="radio" value="Thương gia"> Thương gia</label>
-                <label><input name="hangGhe" type="radio" value="Hạng nhất"> Hạng nhất</label>
+
+            <div id="form-ks" class="form-section hidden">
+                <div class="grid">
+                    <div>
+                        <label>Tỉnh/Thành:</label>
+                        <select id="tinh">
+                            <option value="">--Chọn--</option>
+                            <option>Hà Nội</option>
+                            <option>TP HCM</option>
+                            <option>Đà Nẵng</option>
+                            <option>Hải Phòng</option>
+                            <option>Cần Thơ</option>
+                            <option>Huế</option>
+                            <option>Quảng Ninh</option>
+                            <option>Tuyên Quang</option>
+                            <option>Lào Cai</option>
+                            <option>Thái Nguyên</option>
+                            <option>Phú Thọ</option>
+                            <option>Bắc Ninh</option>
+                            <option>Hưng Yên</option>
+                            <option>Ninh Bình</option>
+                            <option>Quảng Trị</option>
+                            <option>Quảng Ngãi</option>
+                            <option>Gia Lai</option>
+                            <option>Khánh Hòa</option>
+                            <option>Lâm Đồng</option>
+                            <option>Đắk Lắk</option>
+                            <option>Đồng Nai</option>
+                            <option>Tây Ninh</option>
+                            <option>Vĩnh Long</option>
+                            <option>Đồng Tháp</option>
+                            <option>Cà Mau</option>
+                            <option>An Giang</option>
+                            <option>Lai Châu</option>
+                            <option>Điện Biên</option>
+                            <option>Sơn La</option>
+                            <option>Lạng Sơn</option>
+                            <option>Thanh Hoá</option>
+                            <option>Nghệ An</option>
+                            <option>Hà Tĩnh</option>
+                            <option>Cao Bằng</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Khách sạn:</label>
+                        <select id="ks">
+                            <option value="">--Chọn tỉnh trước--</option>
+                        </select>
+                    </div>
+                    <div><label>Số phòng:</label><input id="soPhong" type="number" min="1" value="1" required></div>
+                    <div>
+                        <label>Loại phòng:</label>
+                        <select id="loaiPhong">
+                            <option value="Thường">Phòng thường</option>
+                            <option value="VIP">Phòng VIP</option>
+                        </select>
+                    </div>
+                    <div><label>Ngày nhận:</label><input id="ngayDenKS" type="date" required></div>
+                    <div><label>Ngày trả:</label><input id="ngayDiKS" type="date" required></div>
+                </div>
+                <div id="chiTietKS" class="hotel-info"></div>
+                <button id="datPhong">Đặt phòng</button>
+                <p id="ketQuaPhong" class="success"></p>
+                <p id="loiPhong" class="error"></p>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="footer-content">
+
+            <div class="footer-links">
+                <a href="vision.html">Về chúng tôi</a>
+            </div>
+
+            <p>Travelly giúp bạn khám phá những điểm đến tuyệt vời trên khắp Việt Nam và thế giới.</p>
+
+            <div class="stats">
+                <p>🌍 50+ Điểm đến</p>
+                <p>🏨 20+ Đối tác khách sạn</p>
+                <p>✈️ 10+ Hãng du lịch</p>
+            </div>
+
+            <div class="partners">
+                <p>Đối tác: Agoda | Booking | Traveloka</p>
+            </div>
+
+            <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+
+            <div class="social">
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="#">Twitter</a>
             </div>
         </div>
-        <button id="timChuyen">Tìm chuyến bay</button>
-        <div id="dsChuyen"></div>
-        <button id="datVe">Đặt vé</button>
-        <p id="ketQuaVe" class="success"></p>
-        <p id="loiVe" class="error"></p>
-    </div>
-
-    <div id="form-ks" class="form-section hidden">
-        <div class="grid">
-            <div>
-                <label>Tỉnh/Thành:</label>
-                <select id="tinh">
-                    <option value="">--Chọn--</option>
-                    <option>Hà Nội</option>
-                    <option>TP HCM</option>
-                    <option>Đà Nẵng</option>
-                    <option>Hải Phòng</option>
-                    <option>Cần Thơ</option>
-                    <option>Huế</option>
-                    <option>Quảng Ninh</option>
-                    <option>Tuyên Quang</option>
-                    <option>Lào Cai</option>
-                    <option>Thái Nguyên</option>
-                    <option>Phú Thọ</option>
-                    <option>Bắc Ninh</option>
-                    <option>Hưng Yên</option>
-                    <option>Ninh Bình</option>
-                    <option>Quảng Trị</option>
-                    <option>Quảng Ngãi</option>
-                    <option>Gia Lai</option>
-                    <option>Khánh Hòa</option>
-                    <option>Lâm Đồng</option>
-                    <option>Đắk Lắk</option>
-                    <option>Đồng Nai</option>
-                    <option>Tây Ninh</option>
-                    <option>Vĩnh Long</option>
-                    <option>Đồng Tháp</option>
-                    <option>Cà Mau</option>
-                    <option>An Giang</option>
-                    <option>Lai Châu</option>
-                    <option>Điện Biên</option>
-                    <option>Sơn La</option>
-                    <option>Lạng Sơn</option>
-                    <option>Thanh Hoá</option>
-                    <option>Nghệ An</option>
-                    <option>Hà Tĩnh</option>
-                    <option>Cao Bằng</option>
-                </select>
-            </div>
-            <div>
-                <label>Khách sạn:</label>
-                <select id="ks">
-                    <option value="">--Chọn tỉnh trước--</option>
-                </select>
-            </div>
-            <div><label>Số phòng:</label><input id="soPhong" type="number" min="1" value="1" required></div>
-            <div>
-                <label>Loại phòng:</label>
-                <select id="loaiPhong">
-                    <option value="Thường">Phòng thường</option>
-                    <option value="VIP">Phòng VIP</option>
-                </select>
-            </div>
-            <div><label>Ngày nhận:</label><input id="ngayDenKS" type="date" required></div>
-            <div><label>Ngày trả:</label><input id="ngayDiKS" type="date" required></div>
-        </div>
-        <div id="chiTietKS" class="hotel-info"></div>
-        <button id="datPhong">Đặt phòng</button>
-        <p id="ketQuaPhong" class="success"></p>
-        <p id="loiPhong" class="error"></p>
-    </div>
+    </footer>
 
     <script src="js/booking.js" defer></script>
+    <script src="js/header_footer.js" defer></script>
+
 </body>
 
 </html>

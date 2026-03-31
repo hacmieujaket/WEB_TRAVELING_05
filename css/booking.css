@@ -1,13 +1,49 @@
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    gap: 100px;
+    /* Quan trọng: Toàn bộ trang luôn cao bằng màn hình */
     background: linear-gradient(to bottom, #f0f4f8, #e2e8f0);
 }
 
+header,
+footer {
+    flex-shrink: 0;
+    /* Đảm bảo không bị co lại */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 50px;
+}
+
+.booking-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1200px;
+}
+
 h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 24px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .tab button {

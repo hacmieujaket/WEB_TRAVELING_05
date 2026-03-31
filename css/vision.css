@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f6f7;
+    background: #f2f3f4;
 }
 
 .about-hero {
     text-align: center;
     padding: 80px 20px;
-    background: #0077b6;
+    background: #3e4c54;
     color: white;
 }
 
