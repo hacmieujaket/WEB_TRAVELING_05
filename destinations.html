@@ -10,160 +10,154 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header id="header">
-        <a href="home.html" class="logo">Travelly</a>
-        <nav class="nav">
-            <ul>
-                <li><a href="destinations.html">Desnitation</a></li>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="review.html">Review</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- HEADER -->
+<header id="header">
+    <a href="home.html" class="logo">Travelly</a>
+    <nav class="nav">
+        <ul>
+            <li><a href="destinations.html">Destination</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
 
+<!-- HERO -->
+<section class="hero">
+    <h1>Khám phá thế giới theo cách của bạn</h1>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Khám phá thế giới theo cách của bạn</h1>
-
-        <div class="search-box">
-            <input type="text" placeholder="Điểm đến">
-            <input type="text" placeholder="Khu vực (Bắc/ Trung/ Nam)">
-
-            <button onclick="search()">Tìm kiếm</button>
-        </div>
-    </section>
-
-    <!-- FILTER -->
-    <div class="filter">
-        <button onclick="filterPlaces('all')">Tất cả</button>
-        <button onclick="filterPlaces('bac')">Miền Bắc</button>
-        <button onclick="filterPlaces('trung')">Miền Trung</button>
-        <button onclick="filterPlaces('nam')">Miền Nam</button>
+    <div class="search-box">
+        <input type="text" placeholder="Điểm đến">
+        <input type="text" placeholder="Khu vực (Bắc/ Trung/ Nam)">
+        <button onclick="search()">Tìm kiếm</button>
     </div>
+</section>
 
-    <!-- MAIN -->
-    <main>
-        <h2>Các địa điểm nổi bật</h2>
+<!-- FILTER -->
+<div class="filter">
+    <button onclick="filterPlaces('all')">Tất cả</button>
+    <button onclick="filterPlaces('bac')">Miền Bắc</button>
+    <button onclick="filterPlaces('trung')">Miền Trung</button>
+    <button onclick="filterPlaces('nam')">Miền Nam</button>
+</div>
 
-        <div class="list">
+<!-- MAIN -->
+<main>
+    <h2>Một số địa điểm nổi bật</h2>
 
-            <!-- 10 địa điểm -->
-            <div class="card" data-region="nam" onclick="showDetail('ninhkieu')">
-                <img src="source/ninhkieu.jpg">
-                <div class="overlay">
-                    <h3>Bến Ninh Kiều</h3>
-                </div>
-            </div>
+    <div class="list">
 
-            <div class="card" data-region="nam" onclick="showDetail('cairang')">
-                <img src="source/cairang.jpg">
-                <div class="overlay">
-                    <h3>Cái Răng</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="nam" onclick="showDetail('phuquoc')">
-                <img src="source/phuquoc.jpg">
-                <div class="overlay">
-                    <h3>Phú Quốc</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="trung" onclick="showDetail('danang')">
-                <img src="source/danang1.jpg">
-                <div class="overlay">
-                    <h3>Đà Nẵng</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="trung" onclick="showDetail('hoian')">
-                <img src="source/hoian1.jpg">
-                <div class="overlay">
-                    <h3>Hội An</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="trung" onclick="showDetail('hue')">
-                <img src="source/hue.jpg">
-                <div class="overlay">
-                    <h3>Huế</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="bac" onclick="showDetail('hanoi')">
-                <img src="source/hanoi.jpg">
-                <div class="overlay">
-                    <h3>Hà Nội</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="bac" onclick="showDetail('sapa')">
-                <img src="source/sapa.jpg">
-                <div class="overlay">
-                    <h3>Sapa</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="bac" onclick="showDetail('halong')">
-                <img src="source/halong.jpg">
-                <div class="overlay">
-                    <h3>Hạ Long</h3>
-                </div>
-            </div>
-
-            <div class="card" data-region="nam" onclick="showDetail('condao')">
-                <img src="source/condao.jpg">
-                <div class="overlay">
-                    <h3>Côn Đảo</h3>
-                </div>
-            </div>
-
+        <div class="card" data-region="nam" onclick="showDetail('ninhkieu')">
+            <img src="source/ninhkieu.jpg">
+            <div class="overlay"><h3>Bến Ninh Kiều</h3></div>
         </div>
-    </main>
 
+        <div class="card" data-region="nam" onclick="showDetail('cairang')">
+            <img src="source/cairang.jpg">
+            <div class="overlay"><h3>Cái Răng</h3></div>
+        </div>
 
+        <div class="card" data-region="nam" onclick="showDetail('phuquoc')">
+            <img src="source/phuquoc.jpg">
+            <div class="overlay"><h3>Phú Quốc</h3></div>
+        </div>
 
-    <!-- DETAIL -->
-    <div id="detail" class="detail">
-        <h2 id="title"></h2>
-        <img id="image">
-        <p id="desc"></p>
+        <div class="card" data-region="trung" onclick="showDetail('danang')">
+            <img src="source/danang1.jpg">
+            <div class="overlay"><h3>Đà Nẵng</h3></div>
+        </div>
+
+        <div class="card" data-region="trung" onclick="showDetail('hoian')">
+            <img src="source/hoian1.jpg">
+            <div class="overlay"><h3>Hội An</h3></div>
+        </div>
+
+        <div class="card" data-region="trung" onclick="showDetail('hue')">
+            <img src="source/hue.jpg">
+            <div class="overlay"><h3>Huế</h3></div>
+        </div>
+
+        <div class="card" data-region="bac" onclick="showDetail('hanoi')">
+            <img src="source/hanoi.jpg">
+            <div class="overlay"><h3>Hà Nội</h3></div>
+        </div>
+
+        <div class="card" data-region="bac" onclick="showDetail('sapa')">
+            <img src="source/sapa.jpg">
+            <div class="overlay"><h3>Sapa</h3></div>
+        </div>
+
+        <div class="card" data-region="bac" onclick="showDetail('halong')">
+            <img src="source/halong.jpg">
+            <div class="overlay"><h3>Hạ Long</h3></div>
+        </div>
+
+        <div class="card" data-region="nam" onclick="showDetail('condao')">
+            <img src="source/condao.jpg">
+            <div class="overlay"><h3>Côn Đảo</h3></div>
+        </div>
+
     </div>
+</main>
 
-    <footer id="contact">
-        <div class="footer-content">
+<!-- DETAIL -->
+<div id="detail" class="detail" style="display:none;">
+    <div class="detail-container">
 
-            <div class="footer-links">
-                <a href="vision.html">Về chúng tôi</a>
-            </div>
-
-            <p>Travelly giúp bạn khám phá những điểm đến tuyệt vời trên khắp Việt Nam và thế giới.</p>
-
-            <div class="stats">
-                <p>🌍 50+ Điểm đến</p>
-                <p>🏨 20+ Đối tác khách sạn</p>
-                <p>✈️ 10+ Hãng du lịch</p>
-            </div>
-
-            <div class="partners">
-                <p>Đối tác: Agoda | Booking | Traveloka</p>
-            </div>
-
-            <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
-
-            <div class="social">
-                <a href="#">Facebook</a> |
-                <a href="#">Instagram</a> |
-                <a href="#">Twitter</a>
-            </div>
+        <div class="detail-left">
+            <img id="image">
         </div>
-    </footer>
 
-    <script src="js/destinations.js"></script>
-    <script src="js/header_footer.js"></script>
+        <div class="detail-right">
+            <h2 id="title"></h2>
+            <p id="desc"></p>
+
+            <h4>Điểm nổi bật:</h4>
+            <ul id="highlights"></ul>
+
+            <h4>Lịch trình:</h4>
+            <p id="schedule"></p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER (ĐÃ ĐỒNG BỘ) -->
+<footer id="contact">
+    <div class="footer-content">
+
+        <div class="footer-links">
+            <a href="vision.html">Về chúng tôi</a>
+        </div>
+
+        <p>Travelly giúp bạn khám phá những điểm đến tuyệt vời trên khắp Việt Nam và thế giới.</p>
+
+        <div class="stats">
+            <p>🌍 50+ Điểm đến</p>
+            <p>🏨 20+ Đối tác khách sạn</p>
+            <p>✈️ 10+ Hãng du lịch</p>
+        </div>
+
+        <div class="partners">
+            <p>Đối tác: Agoda | Booking | Traveloka</p>
+        </div>
+
+        <p>Email: info@travelly.com | Phone: +84 123 456 789</p>
+
+        <div class="social">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </div>
+
+        <p style="margin-top:15px;">© 2026 Travelly</p>
+
+    </div>
+</footer>
+
+<script src="js/destinations.js"></script>
+<script src="js/header_footer.js"></script>
+
 </body>
-
 </html>
