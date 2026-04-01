@@ -2,12 +2,12 @@
 let currentPage = 1;
 let recordsPerPage = 9;
 let allReviews = []; /*một mảng*/
-let placeNameMap={}; /*một object phục vụ giống bảng băm truy vấn đúng dữ liệu tức thời*/
+let placeNameMap = {}; /*một object phục vụ giống bảng băm truy vấn đúng dữ liệu tức thời*/
 Promise.all([
     /*Lấy dữ liệu từ hai file json, đối với reviewdata.json thì nó sẽ so sánh xem nếu dữ liệu trong localStorge nhiều hơn
     thì nó sẽ không lấy dữ liệu từ reviewdata.json, còn place.json thì vẫn load bình thường*/
-    fetch("reviewdata.json").then(res => res.json()),
-    fetch("place.json").then(res => res.json())
+    fetch(".vscode/reviewdata.json").then(res => res.json()),
+    fetch(".vscode/place.json").then(res => res.json())
 ]).then(([reviewsData, placesData]) => {
     placeNameMap = placesData;
     let localData = JSON.parse(localStorage.getItem("reviews")) || [];
@@ -22,7 +22,7 @@ Promise.all([
 window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("fade-out");
     document.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function(e) {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
             document.body.classList.add("fade-out");
             setTimeout(() => {
@@ -94,75 +94,75 @@ function setupPagination(reviews) {
 }
 function calculateAverage(review) {
     /*Tính số sao trung bình từ 4 dữ liệu sao đánh giá trong reviewdetail*/
-    return (review.serviceStar+review.hotelStar+review.tourguideStar+review.itineraryStar)/4;
+    return (review.serviceStar + review.hotelStar + review.tourguideStar + review.itineraryStar) / 4;
 }
 function renderStars(rating, starFill) {
     /*Hàm này phục vụ việc đã có giá trị trung bình rồi sau đó sẽ tính ra phần trăm và cho tham số thứ hai là một class của thẻ html
     fill sao theo phần trăm áp dụng kỹ thuật css cho phép hai phần sao đè lên nhau với phần sao không màu nằm dưới
     và phần sao có màu ở trên*/
-    let percent =(rating/5) *100;
-    starFill.style.width=percent+"%";
+    let percent = (rating / 5) * 100;
+    starFill.style.width = percent + "%";
 }
-backgroundimages=[
+backgroundimages = [
     "Source/rednebula.png",
     "Source/greennebula.png",
     "Source/bluenebula.png"
 ];
-function createReviewElement(review,index) {
+function createReviewElement(review, index) {
     /*Hàm này dùng để sinh một cấu trúc HTML là một thẻ đánh giá*/
-    let mainDisplay=document.getElementById("mainDisplay");
-    let reviewCard=document.createElement("article");
-    reviewCard.className="review-card card-component";
+    let mainDisplay = document.getElementById("mainDisplay");
+    let reviewCard = document.createElement("article");
+    reviewCard.className = "review-card card-component";
     mainDisplay.appendChild(reviewCard);
-    let cardBackground=document.createElement("div");
-    cardBackground.className="card-component upper-container";
-    let img=document.createElement("img");
+    let cardBackground = document.createElement("div");
+    cardBackground.className = "card-component upper-container";
+    let img = document.createElement("img");
     cardBackground.appendChild(img);
-    img.className="upper-container img-background";
+    img.className = "upper-container img-background";
     /*Lấy ngẫu nhiên 1 ảnh trong mảng backgroundimages*/
-    img.src=backgroundimages[Math.floor(Math.random()*backgroundimages.length)];
-    let date=document.createElement("time");
+    img.src = backgroundimages[Math.floor(Math.random() * backgroundimages.length)];
+    let date = document.createElement("time");
     cardBackground.appendChild(date);
-    date.dateTime=review.date;
-    date.className="upper-container review-date";
-    date.textContent=review.date;
+    date.dateTime = review.date;
+    date.className = "upper-container review-date";
+    date.textContent = review.date;
     reviewCard.appendChild(cardBackground);
-    let cardInfo=document.createElement("div");
-    cardInfo.className="card-component info-container";
+    let cardInfo = document.createElement("div");
+    cardInfo.className = "card-component info-container";
     reviewCard.appendChild(cardInfo);
-    let infoLeftSpace=document.createElement("span");
-    infoLeftSpace.className="info-container left";
+    let infoLeftSpace = document.createElement("span");
+    infoLeftSpace.className = "info-container left";
     cardInfo.appendChild(infoLeftSpace);
-    let placeName=document.createElement("div");
-    placeName.className="info-container place-name";
+    let placeName = document.createElement("div");
+    placeName.className = "info-container place-name";
     /*Đã có giá trị từ review nên chỉ cần lấy ra đúng tên có dấu rồi áp vào không cần chạy vòng lặp hay if else nhiều */
     placeName.textContent = placeNameMap[review.reviewPlace] || placeName.textContent;
     infoLeftSpace.appendChild(placeName);
-    let starRating=document.createElement("div");
-    starRating.className="star-rating-card";
+    let starRating = document.createElement("div");
+    starRating.className = "star-rating-card";
     infoLeftSpace.appendChild(starRating);
-    let starWrapper=document.createElement("div");
-    starWrapper.className="stars-wrapper";
+    let starWrapper = document.createElement("div");
+    starWrapper.className = "stars-wrapper";
     starRating.appendChild(starWrapper);
-    let starBg=document.createElement("div");
-    starBg.className="star-bg";
-    starBg.textContent="★★★★★";
+    let starBg = document.createElement("div");
+    starBg.className = "star-bg";
+    starBg.textContent = "★★★★★";
     starWrapper.appendChild(starBg);
-    let starFill=document.createElement("div");
-    starFill.className="star-fill";
-    starFill.textContent="★★★★★";
+    let starFill = document.createElement("div");
+    starFill.className = "star-fill";
+    starFill.textContent = "★★★★★";
     starWrapper.appendChild(starFill);
-    let avg=calculateAverage(review);
-    renderStars(avg,starFill);
-    let infoRightSpace=document.createElement("span");
-    infoRightSpace.className="info-container right";
+    let avg = calculateAverage(review);
+    renderStars(avg, starFill);
+    let infoRightSpace = document.createElement("span");
+    infoRightSpace.className = "info-container right";
     cardInfo.appendChild(infoRightSpace);
-    let reviewerName=document.createElement("div");
-    reviewerName.className="info-container reviewer-name";
-    reviewerName.textContent=review.reviewerName;
+    let reviewerName = document.createElement("div");
+    reviewerName.className = "info-container reviewer-name";
+    reviewerName.textContent = review.reviewerName;
     infoRightSpace.appendChild(reviewerName);
     /*Gán cho mỗi phần tử được tạo một sự kiện khi bấm vào sẽ đi tới trang reviewdetail cùng với gửi id là reviewID cho trang đó
-     phục vụ việc fill dữ liệu vào*/ 
+     phục vụ việc fill dữ liệu vào*/
     reviewCard.addEventListener("click", (e) => {
         e.preventDefault();
         document.body.classList.add("fade-out");
