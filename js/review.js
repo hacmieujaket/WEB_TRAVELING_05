@@ -6,8 +6,8 @@ let placeNameMap = {}; /*một object phục vụ giống bảng băm truy vấn
 Promise.all([
     /*Lấy dữ liệu từ hai file json, đối với reviewdata.json thì nó sẽ so sánh xem nếu dữ liệu trong localStorge nhiều hơn
     thì nó sẽ không lấy dữ liệu từ reviewdata.json, còn place.json thì vẫn load bình thường*/
-    fetch(".vscode/reviewdata.json").then(res => res.json()),
-    fetch(".vscode/place.json").then(res => res.json())
+    fetch("reviewdata.json").then(res => res.json()),
+    fetch("place.json").then(res => res.json())
 ]).then(([reviewsData, placesData]) => {
     placeNameMap = placesData;
     let localData = JSON.parse(localStorage.getItem("reviews")) || [];
