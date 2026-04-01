@@ -1,4 +1,4 @@
-
+// --- Dữ liệu giả lập cho Khách sạn ---
 const dsKhachSan = [
     { id: 1, ten: "Hanoi Grand Hotel", diaChi: "1 Trần Bình, Cầu Giấy", sao: 5, anhUrl: "", gia: 2000000, tinh: "Hà Nội" },
     { id: 2, ten: "Sun Travel Hotel", diaChi: "10 Hàng Bài, Hoàn Kiếm", sao: 4, anhUrl: "", gia: 1500000, tinh: "Hà Nội" },
@@ -172,26 +172,30 @@ const dsKhachSan = [
     { id: 170, ten: "Hồng Ngọc Hotel", diaChi: "Đại lộ Hùng Vương", sao: 3, anhUrl: "", gia: 600000, tinh: "Phú Thọ" }
 ];
 
+// --- Ảnh cho danh sách khách sạn
 dsKhachSan.forEach(k => {
     k.anhUrl = `https://loremflickr.com/400/300/hotel,building?lock=${k.id}`;
 });
 
+// Phân loại tỉnh thành theo vùng miền (1: Bắc, 2: Trung, 3: Nam) để tính hệ số khoảng cách
 const vungMien = {
     "1": ["hà nội", "hải phòng", "quảng ninh", "tuyên quang", "lào cai", "thái nguyên", "phú thọ", "bắc ninh", "hưng yên", "ninh bình", "lai châu", "điện biên", "sơn la", "lạng sơn", "cao bằng"],
     "2": ["đà nẵng", "huế", "quảng trị", "quảng ngãi", "gia lai", "khánh hòa", "lâm đồng", "đắk lắk", "thanh hoá", "nghệ an", "hà tĩnh"],
     "3": ["tp hcm", "cần thơ", "đồng nai", "tây ninh", "vĩnh long", "đồng tháp", "cà mau", "an giang"]
 };
 
+// Cấu hình khung giờ bay cố định dựa trên vùng xuất phát
 const gioBayTheoVung = {
-    "tayNamBo": ["06:30", "14:00", "09:15", "16:45", "11:00", "19:30"],
-    "dongNamBo": ["07:00", "13:30", "09:40", "15:30", "11:30", "19:45"],
-    "tayNguyen": ["06:45", "14:30", "08:00", "17:15", "12:45", "20:30"],
-    "namTrungBo": ["08:45", "16:00", "10:30", "18:20", "11:50", "21:00"],
-    "bacTrungBo": ["06:50", "21:00", "09:45", "17:40", "12:20", "23:00"],
-    "tayBacBo": ["07:45", "13:00", "08:50", "15:30", "18:00", "22:30"],
-    "conLai": ["10:00", "14:20", "17:50", "19:45", "22:00", "23:30"]
+    "TayNamBo": ["06:30", "14:00", "09:15", "16:45", "11:00", "19:30"],
+    "DongNamBo": ["07:00", "13:30", "09:40", "15:30", "11:30", "19:45"],
+    "TayNguyen": ["06:45", "14:30", "08:00", "17:15", "12:45", "20:30"],
+    "NamTrungBo": ["08:45", "16:00", "10:30", "18:20", "11:50", "21:00"],
+    "BacTrungBo": ["06:50", "21:00", "09:45", "17:40", "12:20", "23:00"],
+    "TayBacBo": ["07:45", "13:00", "08:50", "15:30", "18:00", "22:30"],
+    "ConLai": ["10:00", "14:20", "17:50", "19:45", "22:00", "23:30"]
 };
 
+// Hàm xác định vùng miền (Bắc/Trung/Nam) từ tên tỉnh
 function getMien(tenTinh) {
     const ten = tenTinh.trim().toLowerCase();
     for (let mien in vungMien) {
@@ -200,17 +204,19 @@ function getMien(tenTinh) {
     return null;
 }
 
+// Hàm xác định tiểu vùng để lấy khung giờ bay tương ứng
 function getSubRegion(tenTinh) {
     const t = tenTinh.trim().toLowerCase();
-    if (["cần thơ", "vĩnh long", "đồng tháp", "cà mau", "an giang"].includes(t)) return "tayNamBo";
-    if (["tp hcm", "đồng nai", "tây ninh"].includes(t)) return "dongNamBo";
-    if (["gia lai", "lâm đồng", "đắk lắk"].includes(t)) return "tayNguyen";
-    if (["đà nẵng", "quảng ngãi", "khánh hòa"].includes(t)) return "namTrungBo";
-    if (["huế", "quảng trị", "thanh hoá", "nghệ an", "hà tĩnh"].includes(t)) return "bacTrungBo";
-    if (["lào cai", "lai châu", "điện biên", "sơn la"].includes(t)) return "tayBacBo";
-    return "conLai";
+    if (["cần thơ", "vĩnh long", "đồng tháp", "cà mau", "an giang"].includes(t)) return "TayNamBo";
+    if (["tp hcm", "đồng nai", "tây ninh"].includes(t)) return "DongNamBo";
+    if (["gia lai", "lâm đồng", "đắk lắk"].includes(t)) return "TayNguyen";
+    if (["đà nẵng", "quảng ngãi", "khánh hòa"].includes(t)) return "NamTrungBo";
+    if (["huế", "quảng trị", "thanh hoá", "nghệ an", "hà tĩnh"].includes(t)) return "BacTrungBo";
+    if (["lào cai", "lai châu", "điện biên", "sơn la"].includes(t)) return "TayBacBo";
+    return "ConLai";
 }
 
+// Hàm tạo mã chuyến bay ngẫu nhiên dựa trên thuật toán Hash 
 function taoMaChuyenBay(noiDi, noiDen, prefix, index) {
     let str = noiDi.trim().toLowerCase() + "-" + noiDen.trim().toLowerCase() + "-" + prefix + index;
     let hash = 0;
@@ -224,6 +230,7 @@ function taoMaChuyenBay(noiDi, noiDen, prefix, index) {
 
 let ketQuaTimKiem = [];
 
+// --- Xử lý chuyển đổi Tab (Máy bay / Khách sạn) ---
 document.getElementById('tab-mb').onclick = () => {
     document.getElementById('form-mb').classList.remove('hidden');
     document.getElementById('form-ks').classList.add('hidden');
@@ -237,6 +244,7 @@ document.getElementById('tab-ks').onclick = () => {
     document.getElementById('tab-mb').classList.remove('active');
 };
 
+// Reset thông báo khi thay đổi lựa chọn để tránh gây nhầm lẫn cho người dùng
 document.getElementById('noiDen').addEventListener('change', () => {
     document.getElementById('ketQuaVe').innerText = '';
 });
@@ -244,12 +252,17 @@ document.getElementById('tinh').addEventListener('change', () => {
     document.getElementById('ketQuaPhong').innerText = '';
 });
 
+/* ==========================================================================
+   4. LOGIC TÌM KIẾM & ĐẶT VÉ MÁY BAY
+   ========================================================================== */
 document.getElementById('timChuyen').onclick = function () {
+    // 1. Lấy dữ liệu từ FORM
     const noiDi = document.getElementById('noiDi').value.trim();
     const noiDen = document.getElementById('noiDen').value.trim();
     const ngayDiMB = document.getElementById('ngayDiMB').value;
     const soKhach = parseInt(document.getElementById('soKhach').value) || 0;
 
+    // 2. Kiểm tra tính hợp lệ của dữ liệu
     let err = '';
     if (!noiDi) err = 'Vui lòng chọn nơi đi.';
     else if (!noiDen) err = 'Vui lòng chọn nơi đến.';
@@ -264,6 +277,7 @@ document.getElementById('timChuyen').onclick = function () {
     }
     document.getElementById('loiVe').innerText = '';
 
+    // 3. Tính toán hệ số giá dựa trên vùng miền
     const mienDi = getMien(noiDi);
     const mienDen = getMien(noiDen);
 
@@ -281,12 +295,14 @@ document.getElementById('timChuyen').onclick = function () {
         }
     }
 
+    // 4. Tính hệ số theo hạng ghế
     const hangGhe = document.querySelector('input[name="hangGhe"]:checked').value;
     let heSoGhe = 1;
     if (hangGhe === "Phổ thông đặc biệt") heSoGhe = 1.2;
     if (hangGhe === "Thương gia") heSoGhe = 2.0;
     if (hangGhe === "Hạng nhất") heSoGhe = 3.0;
 
+    // 5. Khởi tạo danh sách chuyến bay giả lập từ các hãng hàng không
     const vungXuatPhat = getSubRegion(noiDi);
     const khungGio = gioBayTheoVung[vungXuatPhat];
 
@@ -296,6 +312,7 @@ document.getElementById('timChuyen').onclick = function () {
         { hang: "Vietnam Airlines", prefix: "VN", giaGoc: 1200000, gio: [khungGio[4], khungGio[5]] }
     ];
 
+    // 6. Render kết quả ra giao diện
     ketQuaTimKiem = [];
     let indexId = 1;
 
@@ -328,6 +345,7 @@ document.getElementById('timChuyen').onclick = function () {
     document.getElementById('dsChuyen').innerHTML = html;
 };
 
+// --- Xử lý Đặt vé ---
 document.getElementById('datVe').onclick = function () {
     const chon = document.querySelector('input[name="chonChuyen"]:checked');
     const soKhach = parseInt(document.getElementById('soKhach').value) || 0;
@@ -345,7 +363,11 @@ document.getElementById('datVe').onclick = function () {
     document.getElementById('loiVe').innerText = '';
 };
 
-// --- QUẢN LÝ HIỂN THỊ KHÁCH SẠN ---
+/* ==========================================================================
+   5. LOGIC QUẢN LÝ KHÁCH SẠN
+   ========================================================================== */
+
+// --- Đổ dữ liệu Tỉnh vào Select
 const selectTinh = document.getElementById('tinh');
 dsKhachSan.forEach(k => {
     if (![...selectTinh.options].some(o => o.value === k.tinh)) {
@@ -353,6 +375,7 @@ dsKhachSan.forEach(k => {
     }
 });
 
+// --- Lọc danh sách khách sạn theo tỉnh đã chọn ---
 selectTinh.onchange = function () {
     const tinh = this.value;
     const selKS = document.getElementById('ks');
@@ -363,7 +386,7 @@ selectTinh.onchange = function () {
     document.getElementById('chiTietKS').innerHTML = '';
 };
 
-
+// --- Hiển thị chi tiết khách sạn ---
 function renderHotelInfo() {
     const ksId = document.getElementById('ks').value;
     const k = dsKhachSan.find(x => x.id == ksId);
@@ -390,10 +413,11 @@ function renderHotelInfo() {
   `;
 }
 
-
+// Lắng nghe sự kiện thay đổi để cập nhật UI ngay lập tức
 document.getElementById('ks').addEventListener('change', renderHotelInfo);
 document.getElementById('loaiPhong').addEventListener('change', renderHotelInfo);
 
+// --- Logic tính tiền và Đặt phòng ---
 document.getElementById('datPhong').onclick = function () {
     const tinh = document.getElementById('tinh').value;
     const ksId = document.getElementById('ks').value;
@@ -402,6 +426,7 @@ document.getElementById('datPhong').onclick = function () {
     const ngayDen = document.getElementById('ngayDenKS').value;
     const ngayDi = document.getElementById('ngayDiKS').value;
 
+    // Kiểm tra tính hợp lệ của dữ liệu
     let err = '';
     if (!tinh) err = 'Chọn tỉnh.';
     else if (!ksId) err = 'Chọn khách sạn.';
